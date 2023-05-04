@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Card from 'react-bootstrap/Card';
+import { Link } from 'react-router-dom';
 
 function PokemonCard({ url, name }) {
   const [pokemon, setPokemon] = useState(null);
@@ -24,12 +25,12 @@ function PokemonCard({ url, name }) {
 
   const { sprites , abilities } = pokemon;
 
-  return (
+  return ( <>
     <div>
     <Card style={{ width: '15rem' }}>
       <Card.Img src={sprites.front_default} />
       <Card.Body>
-        <Card.Title className="text-center">{name.toUpperCase()}</Card.Title>
+        <Card.Title className="text-center"><Link to={`/${name}`}>{name.toUpperCase()}</Link></Card.Title>
         <Card.Text as="div">
         <br></br>
           <h6>Abilities:</h6>
@@ -42,7 +43,7 @@ function PokemonCard({ url, name }) {
       </Card.Body>
     </Card>
     </div>
-  );
+  </>);
 }
 
 export { PokemonCard };

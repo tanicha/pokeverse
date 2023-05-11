@@ -15,7 +15,7 @@ function Navigation() {
         </Navbar.Brand>
         <Nav className='me-auto'>
           <Nav.Link href='/'>All Pokemon</Nav.Link>
-          <Nav.Link href='/favorites'>My Favorite Pokemons</Nav.Link>
+          <Nav.Link href='/favorites'>My Pokemon Deck</Nav.Link>
         </Nav>
       </Container>
     </Navbar>

@@ -36,7 +36,7 @@ function PokemonDetails(){
     return (
         <div>
             <img src={sprites.front_default} style={ imgStyle }/>
-            <h1><ins>{pokemon.name.toUpperCase()}</ins></h1>
+            <h1><ins>{pokemon.name}</ins></h1>
             <h5>Height: {pokemon.height}</h5>
             <h5>Weight: {pokemon.weight}</h5>
             <h5>Abilities:</h5>

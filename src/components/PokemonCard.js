@@ -28,12 +28,18 @@ function PokemonCard({ url, name }) {
 
   const { sprites , abilities } = pokemon;
 
+  const handleAddToFavorites = (event) => {
+    event.preventDefault();
+    addFavorite(name);
+    console.log('added to favorites');
+  };
+
   return ( <>
     <div>
     <Card style={{ width: '15rem' }}>
       <Card.Img src={sprites.front_default} />
       <Card.Body>
-        <Card.Title className="text-center"><Link to={`/${name}`}>{name.toUpperCase()}</Link></Card.Title>
+        <Card.Title className="text-center"><Link to={`/${name}`}>{name}</Link></Card.Title>
         <Card.Text as="div">
         <br></br>
           <h6>Abilities:</h6>
@@ -43,7 +49,7 @@ function PokemonCard({ url, name }) {
             ))}
           </ul>
         </Card.Text>
-        <Button variant='primary' onClick={() => {addFavorite(pokemon.name); console.log('button clicked:', name)}}>
+        <Button variant='primary' onClick={handleAddToFavorites}>
             Add to Deck
         </Button>
       </Card.Body>

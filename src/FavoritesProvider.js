@@ -14,7 +14,7 @@ function FavoritesProvider({ children }) {
 
   function removeFavorite(name) {
     // copy the current favorites array filtering out the pokemon with the given name
-    setFavorites(favorites.filter((favorite) => name.toUpperCase() !== favorite.toUpperCase()));
+    setFavorites(favorites.filter((favorite) => name !== favorite));
   }
 
   return (

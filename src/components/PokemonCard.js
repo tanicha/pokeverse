@@ -6,8 +6,7 @@ import { Button } from 'react-bootstrap';
 
 function PokemonCard({ url, name }) {
   const [pokemon, setPokemon] = useState(null);
-
-  const { addFavorite } = useContext(FavoritesContext)
+  const { addFavorite } = useContext(FavoritesContext);
 
  useEffect(() => {
     const fetchPokemonData = async () => {
@@ -44,7 +43,7 @@ function PokemonCard({ url, name }) {
             ))}
           </ul>
         </Card.Text>
-        <Button variant='primary' onClick={() => addFavorite(name)}>
+        <Button variant='primary' onClick={() => {addFavorite(pokemon.name); console.log('button clicked:', name)}}>
             Add to Deck
         </Button>
       </Card.Body>
